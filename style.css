@@ -174,11 +174,26 @@ body {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s, border-color 0.3s;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .service-card:hover {
@@ -189,7 +204,7 @@ body {
 .card-icon {
     font-size: 2rem;
     color: var(--glow-blue);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .service-card h3 {
@@ -274,6 +289,119 @@ body {
 .contact-pill.wa {
     background-color: #25d366;
     border: none;
+}
+
+/* Chatbot Floating Widget */
+.chatbot-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2000;
+}
+
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-window {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 320px;
+    background-color: #131e3a;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: #0b1329;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chat-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.chat-header strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.online-status {
+    font-size: 0.75rem;
+    color: #22c55e;
+}
+
+.close-chat {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 1.2rem;
+}
+
+.bot-msg {
+    background-color: #1e293b;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+.quick-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quick-options button {
+    background-color: rgba(37, 99, 235, 0.15);
+    color: var(--glow-blue);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    padding: 0.6rem;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quick-options button:hover {
+    background-color: var(--accent-blue);
+    color: #ffffff;
 }
 
 footer {
