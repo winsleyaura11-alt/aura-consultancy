@@ -96,46 +96,10 @@
                 <a href="https://wa.me/254115690978?text=Hi,%20I%20need%20NSSF%20statement/registration" target="_blank" class="card-btn">Order via WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <!-- Passports & Immigration -->
-            <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-passport"></i></div>
-                <h3>Passport Applications</h3>
-                <span class="tag">eCitizen Immigration</span>
-                <p>New Passport applications, Renewals, Child Passports, and appointment tracking.</p>
-                <a href="https://wa.me/254115690978?text=Hi,%20I%20need%20help%20with%20a%20Passport%20Application" target="_blank" class="card-btn">Order via WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- KUCCPS & HELB Services -->
-            <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h3>HELB & KUCCPS Services</h3>
-                <span class="tag">Education</span>
-                <p>University Placement & Course Revision via KUCCPS, HELB Loan & Compliance applications.</p>
-                <a href="https://wa.me/254115690978?text=Hi,%20I%20need%20help%20with%20KUCCPS/HELB" target="_blank" class="card-btn">Order via WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- CV, Portfolios & Document Design -->
-            <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
-                <h3>CVs, Portfolios & Design</h3>
-                <span class="tag">Branding & Careers</span>
-                <p>Professional ATS-friendly CV Drafting, Cover Letters, Portfolios, and Official Quotations.</p>
-                <a href="https://wa.me/254115690978?text=Hi,%20I%20want%20a%20professional%20CV/Portfolio%20created" target="_blank" class="card-btn">Order via WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Bulk Printing & Logistics -->
-            <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-print"></i></div>
-                <h3>Bulk Printing & Delivery</h3>
-                <span class="tag">Nationwide Service</span>
-                <p>High-volume document printing and graphic design with countrywide delivery options.</p>
-                <a href="https://wa.me/254115690978?text=Hi,%20I%20have%20a%20bulk%20printing%20request" target="_blank" class="card-btn">Order via WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
         </div>
     </section>
 
-    <!-- Contact & Direct Request Section -->
+    <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="contact-box">
             <h2>Ready to Start Your Request Today?</h2>
@@ -149,9 +113,49 @@
         </div>
     </section>
 
+    <!-- Floating WhatsApp Chatbot Widget -->
+    <div class="chatbot-container">
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <strong>AURA Consultancy Assistant</strong>
+                    <span class="online-status">● Online</span>
+                </div>
+                <button class="close-chat" onclick="toggleChat()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <p class="bot-msg">👋 Hello! Welcome to AURA Consultancy. How can we assist you today?</p>
+                <div class="quick-options">
+                    <button onclick="sendOption('KRA / eTIMS Services')">📊 KRA / eTIMS</button>
+                    <button onclick="sendOption('Till / Paybill Application')">💳 Till / Paybill</button>
+                    <button onclick="sendOption('Business / Company Setup')">🏢 Business Registration</button>
+                    <button onclick="sendOption('SHA Health Insurance')">💷 SHA Registration</button>
+                </div>
+            </div>
+        </div>
+        <button class="chatbot-toggle" onclick="toggleChat()">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
     <footer>
         <p>&copy; 2026 AURA Consultancy — Simple. Fast. Trusted.</p>
     </footer>
+
+    <!-- Chatbot Script -->
+    <script>
+        function toggleChat() {
+            const window = document.getElementById('chatWindow');
+            window.style.display = (window.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function sendOption(serviceName) {
+            const phone = "254115690978";
+            const text = encodeURIComponent("Hello AURA Consultancy, I would like to inquire about: " + serviceName);
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
